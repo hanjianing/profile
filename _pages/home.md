@@ -4,42 +4,82 @@ author_profile: true
 permalink: /
 ---
 
-<!-- 内嵌CSS：强制导航栏横排，无需外部文件 -->
+<!-- 顶部通栏导航条 CSS -->
 <style>
-/* 强制所有导航相关容器横排 */
-nav, .main-navigation, .site-nav, .nav-container, .header-nav {
-  display: block !important;
+/* 导航栏容器：顶部通栏 + 固定背景 */
+.site-header .main-navigation,
+.main-nav,
+.nav-container {
   width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #2c3e50 !important; /* 导航栏背景色（深灰蓝，专业沉稳） */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important; /* 轻微阴影，增加层次感 */
 }
 
-/* 导航列表：强制横排 + 去黑点 + 居中 */
-nav ul, .main-navigation ul, .site-nav ul, .nav-container ul, .header-nav ul,
-.nav, .nav-list, .menu, .menu-items {
+/* 导航列表：水平填满 + 居中 */
+.site-header .main-navigation ul,
+.main-nav ul,
+.nav-container ul,
+.nav,
+.nav-list,
+.menu {
   list-style: none !important;
   padding: 0 !important;
-  margin: 20px auto !important;
+  margin: 0 auto !important;
   display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 15px !important;
-  justify-content: center !important;
+  flex-wrap: nowrap !important; /* 不换行（小屏幕自动适配） */
+  justify-content: center !important; /* 水平居中 */
+  align-items: center !important; /* 垂直居中 */
+  max-width: 1200px !important; /* 限制最大宽度，避免过宽 */
 }
 
-/* 导航按钮样式 */
-nav ul li a, .main-navigation ul li a, .nav-list li a, .menu li a {
+/* 导航项样式：融入导航栏 */
+.site-header .main-navigation ul li,
+.nav-list li,
+.menu li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 导航链接样式：无按钮感，融入通栏 */
+.site-header .main-navigation ul li a,
+.nav-list li a,
+.menu li a {
   text-decoration: none !important;
-  padding: 10px 20px !important;
-  background: #f5f5f5 !important;
-  color: #333 !important;
-  border-radius: 6px !important;
-  font-weight: 600 !important;
-  border: 1px solid #eee !important;
+  padding: 16px 24px !important; /* 上下内边距（控制导航栏高度），左右间距 */
+  color: #ecf0f1 !important; /* 文字颜色（浅灰白） */
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  display: block !important;
+  transition: background-color 0.3s ease !important; /* 悬停过渡动画 */
 }
 
-/* 悬停效果 */
-nav ul li a:hover, .nav-list li a:hover {
-  background: #007bff !important;
+/* 鼠标悬停 + 当前页激活样式 */
+.site-header .main-navigation ul li a:hover,
+.nav-list li a:hover,
+.site-header .main-navigation ul li a.active,
+.nav-list li a.active {
+  background-color: #3498db !important; /* 悬停背景色（亮蓝） */
   color: white !important;
-  border-color: #007bff !important;
+}
+
+/* 小屏幕响应式适配（避免挤压） */
+@media (max-width: 768px) {
+  .site-header .main-navigation ul,
+  .nav-list {
+    flex-wrap: wrap !important; /* 小屏幕自动换行 */
+  }
+  .site-header .main-navigation ul li a,
+  .nav-list li a {
+    padding: 12px 18px !important; /* 缩小内边距 */
+    font-size: 14px !important;
+  }
+}
+
+/* 调整首页内容与导航栏间距（避免紧贴） */
+.page-content {
+  margin-top: 20px !important;
 }
 </style>
 
