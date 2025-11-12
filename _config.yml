@@ -6,7 +6,7 @@ title_separator          : "|"  # 标题分隔符
 name                     : &name "韩佳宁"  # 全局姓名变量
 description              : &description "天津医科大学医学影像学专业本科生 | 智育排名4/31 | 创新竞赛获奖 | 软件著作权申请人"  # 主页描述
 url                      : https://hanjianing.github.io  # 替换为你的主页域名（例：https://hanjianing.github.io）
-baseurl                  : ""  # 无需修改
+baseurl                  : "/profile"
 repository               : "[你的GitHub用户名]/[你的GitHub用户名].github.io"  # 替换为你的仓库地址（例：hanjianing/hanjianing.github.io）
 
 # 横置导航条配置（核心：定义顶部导航链接）
