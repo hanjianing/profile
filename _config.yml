@@ -13,9 +13,9 @@ title                    : "Han Jianing / Academic Portfolio"  # 你的名字+�
 title_separator          : "-"
 name                     : &name "Han Jianing"  # 你的英文/中文名字（模板默认英文，可填"韩佳宁"）
 description              : &description "Han Jianing's academic portfolio | Tianjin Medical University, Medical Imaging"   # 主页描述：你的名字+学校+专业
-url                      : https://[你的GitHub用户名].github.io # 替换为你的主页域名（例：https://hanjianing2003.github.io）
+url                      : https://hanjianing.github.io # 替换为你的主页域名（例：https://hanjianing2003.github.io）
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "[你的GitHub用户名]/[你的GitHub用户名].github.io" # 替换为你的仓库地址（例：hanjianing2003/hanjianing2003.github.io）
+repository               : "hanjianing/hanjianing.github.io" # 替换为你的仓库地址（例：hanjianing2003/hanjianing2003.github.io）
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
