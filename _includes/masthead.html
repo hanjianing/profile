@@ -7,7 +7,7 @@
     
     <!-- 横排导航栏（极简语法，零错误） -->
     <nav style="width:100%;">
-      <ul style="list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; background:#2c3e50; border-radius:4px; padding:5px 0;">
+      <ul style="list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; background:#2c3e50; border-radius:4px; padding:5px 0; transition:background 0.3s ease;">
         <!-- 首页 -->
         <li style="margin:0 5px; padding:0;">
           <a href="https://hanjianing.github.io/profile/" style='display:block; padding:12px 20px; color:#ecf0f1; text-decoration:none; font-size:15px;'>首页</a>
@@ -25,19 +25,38 @@
           <a href="https://hanjianing.github.io/profile/awards/" style='display:block; padding:12px 20px; color:#ecf0f1; text-decoration:none; font-size:15px;'>获奖荣誉</a>
         </li>
         <!-- 个人简历 -->
-      <li style="margin:0 5px; padding:0;">
-  <a href="https://hanjianing.github.io/profile/assets/韩佳宁-医学影像学简历.pdf" style='display:block; padding:12px 20px; color:#ecf0f1; text-decoration:none; font-size:15px;'>个人简历</a>
-</li>
+        <li style="margin:0 5px; padding:0;">
+          <a href="https://hanjianing.github.io/profile/assets/韩佳宁-医学影像学简历.pdf" style='display:block; padding:12px 20px; color:#ecf0f1; text-decoration:none; font-size:15px;'>个人简历</a>
+        </li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- 悬停效果（单独CSS，避免内联冲突） -->
+<!-- 悬停效果 + 导航栏过渡效果（确保滚动变色平滑） -->
 <style>
   nav ul li a:hover {
     background:#3498db !important;
     border-radius:2px;
     transition:background 0.3s;
   }
+  /* 导航栏背景过渡，让变色更平滑 */
+  nav ul {
+    transition: background 0.3s ease !important;
+  }
 </style>
+
+<!-- 效果1：导航栏滚动变色JS（已整合，直接生效） -->
+<script>
+// 监听页面滚动事件
+window.addEventListener('scroll', function() {
+  // 选中导航栏的ul（背景所在元素）
+  const navUl = document.querySelector('nav ul');
+  // 滚动超过50px时变深黑，否则恢复原深灰蓝
+  if (window.scrollY > 50) {
+    navUl.style.background = '#1a2530'; // 更深的黑色，更有质感
+  } else {
+    navUl.style.background = '#2c3e50'; // 原始深灰蓝，保持一致性
+  }
+});
+</script>
