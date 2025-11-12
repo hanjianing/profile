@@ -1,38 +1,56 @@
----
-layout: home
-author_profile: true
----
+# 1. 基础站点设置（决定主页能否被正确识别）
+locale: "zh-CN"                # 中文显示
+title: "韩佳宁 - 医学影像学学术主页"  # 浏览器标签显示的标题
+name: &name "韩佳宁"           # 你的名字（全局复用）
+description: &description "天津医科大学医学影像学专业本科生，专注医学影像处理与创新实践"  # 主页简介
+url: "https://[你的GitHub用户名].github.io"  # 替换为你的主页域名（如https://hanjianing.github.io）
+baseurl: ""                    # 固定留空
+repository: "[你的GitHub用户名]/[你的GitHub用户名].github.io"  # 替换为你的仓库地址（如hanjianing/hanjianing.github.io）
 
-## About Me
+# 2. 侧边栏个人信息（访客第一眼看到的信息）
+author:
+  avatar: "images/headshot.jpg"  # 头像路径（后续会上传头像到images文件夹）
+  name: *name                    # 复用上面的名字
+  bio: "天津医科大学医学影像学专业大四在读<br>智育排名4/31 | 校级二等奖学金 | 软件著作权申请人"  # 侧边栏简介（换行用<br>）
+  location: "天津"               # 所在城市
+  email: "[你的邮箱]"            # 替换为你的邮箱（方便他人联系）
+  github: "[你的GitHub用户名]"   # 替换为你的GitHub账号（如hanjianing）
 
-我是韩佳宁，天津医科大学医学技术学部医学影像学专业大四在读学生，专注于医学影像相关领域的学习与实践，具备扎实的专业基础和较强的创新能力。
+# 3. 顶部导航栏（控制能访问的页面）
+nav:
+  - name: 首页
+    url: /
+  - name: 项目经历
+    url: /projects/
+  - name: 学术成果
+    url: /publications/
+  - name: 个人简历
+    url: /cv/
 
-### 基本信息
-- 姓名：韩佳宁
-- 性别：男
-- 出生日期：2003年10月29日
-- 籍贯：河北唐山
-- 联系电话：13877132729
-- 教育背景：天津医科大学医学影像学专业 本科在读（2021-2025）
-
-### 核心成绩
-- 学业排名：2024-2025学年 智育成绩4/31，综合成绩4/31
-- 英语能力：CET-4 610分，CET-6 564分，具备良好英语口语能力
-- 荣誉奖项：
-  - 2024年 天津医科大学校级二等奖学金
-  - 2024年 中国国际大学生创新大赛 校级银奖（第四作者）、校级铜奖五次（第二、第三作者）
-  - 2024年 天津市大学生化学竞赛 个人理论知识竞赛三等奖
-  - 2023年 中国国际大学生创新大赛 校级铜奖（团队负责人）
-  - 2023、2024年度 优秀学生信息员
-- 其他成果：软件著作权专利1件（申请审核中）
-- 文体奖项：2024年天津医科大学游泳比赛男子50m仰泳第三名
-
-### 技能与能力
-- 办公技能：熟练掌握Microsoft Office、WPS等办公软件
-- 学习能力：勤奋刻苦，具备较强的自主学习和团队协作能力
-- 组织能力：丰富的学生工作经历，擅长沟通协调与事务统筹
-
-### 校园经历
-- 25年度 医学影像学专业 学生信息站 站长
-- 22影像班 学习委员
-- 医学影像学专业促进会 权益联络部 干事
+# 4. 其他固定配置（不用改，直接复制）
+publication_category:
+  manuscripts:
+    title: '学术成果'
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:path/
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: single
+      author_profile: true
+sass:
+  sass_dir: _sass
+  style: compressed
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
