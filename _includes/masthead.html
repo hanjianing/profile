@@ -1,26 +1,54 @@
-{% include base_path %}
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><span class="navicon"></span></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-            {% else %}
-              {% assign domain = base_path %}
-            {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-          <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
+<header class="masthead">
+  <div class="wrap">
+    {% if site.logo %}
+      <a href="{{ '/' | relative_url }}" class="site-logo" rel="home" title="{{ site.title }}">
+        <img src="{{ site.logo | relative_url }}" alt="{{ site.title }} logo" class="site-logo-img animated fadeIn">
+      </a>
+    {% endif %}
+
+    <!-- 网站标题 -->
+    <h1 class="site-title animated fadeIn"><a href="{{ '/' | relative_url }}" rel="home">{{ site.title }}</a></h1>
+    
+    <!-- 横排导航栏核心代码 -->
+    <nav class="site-nav" style="width:100%; margin:15px 0 0 0; padding:0;">
+      <!-- 导航列表：强制横排 + 去黑点 + 通栏背景 -->
+      <ul style="
+        list-style:none !important; 
+        margin:0 !important; 
+        padding:0 !important; 
+        display:flex !important; 
+        flex-wrap:wrap !important; 
+        justify-content:center !important; 
+        background:#2c3e50 !important; 
+        border-radius:4px !important;
+      ">
+        {% for link in site.data.navigation.main %}
+          {% if link.url contains 'http' %}
+            {% assign domain = '' %}
+          {% else %}
+            {% assign domain = site.url | append: site.baseurl %}
+          {% endif %}
+          <li style="margin:0 !important; padding:0 !important;">
+            <a href="{{ domain }}{{ link.url }}" style="
+              display:block !important;
+              padding:12px 20px !important;
+              color:white !important;
+              text-decoration:none !important;
+              font-size:15px !important;
+              transition:background 0.3s !important;
+            " onmouseover="this.style.background='#3498db'" onmouseout="this.style.background='transparent'">
+              {{ link.title }}
+            </a>
           </li>
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
+        {% endfor %}
+      </ul>
+    </nav>
   </div>
-</div>
+</header>
