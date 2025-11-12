@@ -1,11 +1,11 @@
 main:
   - title: "首页"
-    url: /  # 正确：根路径，对应首页
+    url: "https://hanjianing.github.io/profile/"
   - title: "项目经历"
-    url: /projects/  # 正确：相对路径，对应/pages/projects.md
+    url: "https://hanjianing.github.io/profile/projects/"
   - title: "学术成果"
-    url: /publications/  # 正确：结尾必须带/
+    url: "https://hanjianing.github.io/profile/publications/"
   - title: "获奖荣誉"
-    url: /awards/  # 正确：不要加http/https，不要加用户名.github.io
+    url: "https://hanjianing.github.io/profile/awards/"
   - title: "个人简历"
-    url: /cv/  # 正确：纯相对路径，从根目录开始
+    url: "https://hanjianing.github.io/profile/cv/"
