@@ -2,7 +2,7 @@
 layout: single
 title: 项目经历
 permalink: /projects/  # 与导航链接完全匹配，确保跳转正常
-author_profile: true
+author_profile: false
 ---
 
 ## 软件著作权一项：医学图像处理教学系统
