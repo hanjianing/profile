@@ -1,8 +1,47 @@
 ---
-layout: home  # 使用首页布局
-author_profile: true  # 显示侧边栏个人信息
-permalink: /  # 关键：设置为根路径，作为网站首页
+layout: home
+author_profile: true
+permalink: /
 ---
+
+<!-- 内嵌CSS：强制导航栏横排，无需外部文件 -->
+<style>
+/* 强制所有导航相关容器横排 */
+nav, .main-navigation, .site-nav, .nav-container, .header-nav {
+  display: block !important;
+  width: 100% !important;
+}
+
+/* 导航列表：强制横排 + 去黑点 + 居中 */
+nav ul, .main-navigation ul, .site-nav ul, .nav-container ul, .header-nav ul,
+.nav, .nav-list, .menu, .menu-items {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 20px auto !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 15px !important;
+  justify-content: center !important;
+}
+
+/* 导航按钮样式 */
+nav ul li a, .main-navigation ul li a, .nav-list li a, .menu li a {
+  text-decoration: none !important;
+  padding: 10px 20px !important;
+  background: #f5f5f5 !important;
+  color: #333 !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  border: 1px solid #eee !important;
+}
+
+/* 悬停效果 */
+nav ul li a:hover, .nav-list li a:hover {
+  background: #007bff !important;
+  color: white !important;
+  border-color: #007bff !important;
+}
+</style>
 
 ## 关于我
 
@@ -24,7 +63,7 @@ permalink: /  # 关键：设置为根路径，作为网站首页
   - 2024年 中国国际大学生创新大赛 校级银奖（第四作者）、校级铜奖5次（第二/三作者）
   - 2024年 天津市大学生化学竞赛 个人理论知识竞赛三等奖
   - 2023年 中国国际大学生创新大赛 校级铜奖（团队负责人）
-- **其他成果**：软件著作权专利1件（申请审核中）
+- **其他成果**：软件著作权1件
 - **文体奖项**：2024年天津医科大学游泳比赛男子50m仰泳第三名
 
 ### 校园经历
