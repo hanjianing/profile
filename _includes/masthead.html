@@ -1,51 +1,42 @@
-<!DOCTYPE html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
 <header class="masthead">
   <div class="wrap">
     <!-- 网站标题 -->
-    <h1 class="site-title animated fadeIn">
+    <h1 class="site-title">
       <a href="https://hanjianing.github.io/profile/" rel="home">{{ site.title }}</a>
     </h1>
     
-    <!-- 横排通栏导航（绝对路径，跳转无错） -->
-    <nav class="site-nav" style="width: 100%; margin: 15px 0 0 0; padding: 0;">
-      <ul style="
-        list-style: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        background-color: #2c3e50 !important;
-        border-radius: 4px !important;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
-      ">
-        {% for link in site.data.navigation.main %}
-          <li style="margin: 0 !important; padding: 0 !important;">
-            <a 
-              href="{{ link.url }}"  <!-- 直接使用绝对路径，不做任何拼接 -->
-              style="
-                display: block !important;
-                padding: 14px 22px !important;
-                color: #ecf0f1 !important;
-                text-decoration: none !important;
-                font-size: 15px !important;
-                font-weight: 500 !important;
-                transition: background 0.3s !important;
-              "
-              onmouseover="this.style.background='#3498db'"
-              onmouseout="this.style.background='transparent'"
-            >
-              {{ link.title }}
-            </a>
-          </li>
-        {% endfor %}
+    <!-- 横排导航栏（语法正确，样式正常） -->
+    <nav class="site-nav" style="width:100%; margin:15px 0 0 0; padding:0;">
+      <ul style="list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; justify-content:center; background:#2c3e50; border-radius:4px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+        <!-- 首页 -->
+        <li style="margin:0; padding:0;">
+          <a href="https://hanjianing.github.io/profile/" style="display:block; padding:14px 22px; color:#ecf0f1; text-decoration:none; font-size:15px; font-weight:500;">首页</a>
+        </li>
+        <!-- 项目经历 -->
+        <li style="margin:0; padding:0;">
+          <a href="https://hanjianing.github.io/profile/projects/" style="display:block; padding:14px 22px; color:#ecf0f1; text-decoration:none; font-size:15px; font-weight:500;">项目经历</a>
+        </li>
+        <!-- 学术成果 -->
+        <li style="margin:0; padding:0;">
+          <a href="https://hanjianing.github.io/profile/publications/" style="display:block; padding:14px 22px; color:#ecf0f1; text-decoration:none; font-size:15px; font-weight:500;">学术成果</a>
+        </li>
+        <!-- 获奖荣誉 -->
+        <li style="margin:0; padding:0;">
+          <a href="https://hanjianing.github.io/profile/awards/" style="display:block; padding:14px 22px; color:#ecf0f1; text-decoration:none; font-size:15px; font-weight:500;">获奖荣誉</a>
+        </li>
+        <!-- 个人简历 -->
+        <li style="margin:0; padding:0;">
+          <a href="https://hanjianing.github.io/profile/cv/" style="display:block; padding:14px 22px; color:#ecf0f1; text-decoration:none; font-size:15px; font-weight:500;">个人简历</a>
+        </li>
       </ul>
     </nav>
   </div>
 </header>
+
+<!-- 悬停效果（用CSS实现，避免JS语法错误） -->
+<style>
+  .site-nav ul li a:hover {
+    background:#3498db !important;
+    transition:background 0.3s;
+  }
+</style>
