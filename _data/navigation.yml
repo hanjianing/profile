@@ -1,11 +1,11 @@
 main:
   - title: "首页"
-    url: /  # 对应首页（_pages/home.md）
+    url: /  # 正确：根路径，对应首页
   - title: "项目经历"
-    url: /projects/  # 对应_pages/projects.md
+    url: /projects/  # 正确：相对路径，对应/pages/projects.md
   - title: "学术成果"
-    url: /publications/  # 对应_pages/publications.md
+    url: /publications/  # 正确：结尾必须带/
   - title: "获奖荣誉"
-    url: /awards/  # 对应_pages/awards.md
+    url: /awards/  # 正确：不要加http/https，不要加用户名.github.io
   - title: "个人简历"
-    url: /cv/  # 对应_pages/cv.md
+    url: /cv/  # 正确：纯相对路径，从根目录开始
