@@ -29,7 +29,7 @@ author:
   location         : "Tianjin, China" # 地点：城市+国家
   employer         : "Tianjin Medical University" # 学校（对应模板"employer"字段）
   uri              : # URL（无则留空，模板默认）
-  email            : "[你的邮箱地址]" # 替换为你的邮箱（例：hanjianing@email.tmu.edu.cn）
+  email            : "hanjn1029@163.com" # 替换为你的邮箱（例：hanjianing@email.tmu.edu.cn）
 
   # Academic websites（无对应账号则留空，模板默认字段）
   academia         : # URL
