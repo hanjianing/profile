@@ -1,16 +1,22 @@
-{% include base_path %}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta charset="utf-8">
+  <title>{% if page.title %}{{ page.title | escape }} | {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
-{% include seo.html %}
+  <!-- 加载模板默认CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  
+  <!-- 加载你的自定义CSS（关键：确保导航样式生效） -->
+  <link rel="stylesheet" href="{{ "/assets/css/custom.css" | relative_url }}">
 
-<link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-</script>
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
+  <!-- 其他默认元数据 -->
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+  
+  {% if site.twitter.username %}
+  <link rel="me" href="https://twitter.com/{{ site.twitter.username }}">
+  {% endif %}
+</head>
