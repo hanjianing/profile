@@ -1,0 +1,25 @@
+/* 导航栏横排 & 去黑点 */
+.nav-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 20px !important;
+  justify-content: center !important;
+  margin: 20px 0 !important;
+}
+
+/* 导航按钮样式 */
+.nav-list a {
+  text-decoration: none !important;
+  padding: 8px 15px !important;
+  background-color: #f0f0f0 !important;
+  color: #333 !important;
+  border-radius: 4px !important;
+  transition: background-color 0.3s !important;
+}
+
+.nav-list a:hover {
+  background-color: #ddd !important;
+  color: #000 !important;
+}
